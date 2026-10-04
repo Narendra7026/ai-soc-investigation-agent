@@ -6,6 +6,8 @@ from app.services.enrichment.ioc_extractor import extract_iocs
 
 from app.services.enrichment.threat_intel import enrich_ip
 
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(
     title="AI SOC Investigation Agent",
@@ -13,6 +15,19 @@ app = FastAPI(
     version="0.2.0"
 )
 
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
