@@ -4,5 +4,8 @@
   "severity": "high",
   "source": "Microsoft Defender",
   "username": "john.doe",
-  "hostname": "WIN-LAPTOP-22"
+  "hostname": "WIN-LAPTOP-22",
+  "description": "PowerShell execution observed on endpoint",
+  "process_name": "powershell.exe",
+  "command_line": "powershell.exe -EncodedCommand SQBFAFgA"
 }

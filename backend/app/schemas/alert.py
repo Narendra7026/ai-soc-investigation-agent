@@ -1,5 +1,6 @@
+from typing import Literal, Optional
+
 from pydantic import BaseModel
-from typing import Optional, Literal
 
 
 class SecurityAlert(BaseModel):
@@ -21,3 +22,7 @@ class SecurityAlert(BaseModel):
 
     failed_attempts: Optional[int] = None
     time_window_minutes: Optional[int] = None
+
+    description: Optional[str] = None
+    process_name: Optional[str] = None
+    command_line: Optional[str] = None

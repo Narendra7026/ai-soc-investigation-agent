@@ -1,68 +1,230 @@
-Phase 5 - Threat Intelligence Enrichment
+PHASE 6 - MITRE ATT\&CK MAPPING
 
 
 
-Concepts learned:
+What I learned:
 
 
 
-IOC Extraction
-
-&#x20;   ↓
-
-IOC Validation
-
-&#x20;   ↓
-
-Threat Intelligence Enrichment
+MITRE ATT\&CK describes adversary behaviors.
 
 
 
-Threat intelligence adds context to raw indicators.
+Tactic:
+
+Why the attacker performs an action.
 
 
 
-Example:
+Technique:
+
+How the attacker performs the action.
 
 
 
-185.220.101.10
+Sub-technique:
+
+A more specific implementation of a technique.
 
 
 
-Reputation:
-
-Malicious
 
 
-
-Confidence:
-
-90%
+Example 1:
 
 
 
-Tags:
-
-TOR Exit Node
-
-Brute Force
+25 Failed Login Attempts
 
 
 
-Important:
+↓
 
 
 
-Unknown does not mean benign.
+Credential Access
 
 
 
-Missing threat intelligence should not be fabricated.
+↓
 
 
 
-The LLM should explain collected security evidence
+T1110 - Brute Force
 
-rather than act as the primary threat-intelligence source.
+
+
+
+
+Example 2:
+
+
+
+PowerShell Execution
+
+
+
+↓
+
+
+
+Execution
+
+
+
+↓
+
+
+
+T1059.001 - PowerShell
+
+
+
+
+
+Important Principles:
+
+
+
+1\. MITRE mapping is not a malicious verdict.
+
+
+
+2\. Mapping must be supported by evidence.
+
+
+
+3\. Do not map more specific sub-techniques
+
+&#x20;  unless evidence supports them.
+
+
+
+4\. No evidence means no mapping.
+
+
+
+5\. MITRE mapping should be deterministic
+
+&#x20;  before involving the LLM.
+
+
+
+
+
+\## Phase 8 - Gemini AI Investigation
+
+
+
+Provider:
+
+
+
+Google Gemini
+
+
+
+
+
+Architecture:
+
+
+
+Security Alert
+
+↓
+
+Threat Intelligence
+
+↓
+
+MITRE ATT\&CK
+
+↓
+
+Risk Engine
+
+↓
+
+Evidence Package
+
+↓
+
+Gemini
+
+↓
+
+AI Investigation
+
+
+
+
+
+Gemini Responsibilities:
+
+
+
+\- Explain collected evidence
+
+\- Generate investigation summary
+
+\- Produce findings
+
+\- Provide evidence-backed verdict
+
+\- Recommend analyst actions
+
+
+
+
+
+Gemini Does NOT:
+
+
+
+\- Create threat intelligence
+
+\- Decide MITRE mappings
+
+\- Calculate deterministic risk
+
+\- Execute remediation
+
+\- Fabricate missing evidence
+
+
+
+
+
+Structured Output:
+
+
+
+Verdict
+
+Confidence
+
+Summary
+
+Findings
+
+Recommended Actions
+
+
+
+
+
+Core Principle:
+
+
+
+Evidence First
+
+↓
+
+AI Explanation Second
+
+↓
+
+Human Decision Last
 
